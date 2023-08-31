@@ -7,15 +7,15 @@ help:
 
 install:
 	@echo "Installing..."
-	curl -sSL https://install.python-poetry.org | python -
-	poetry install
-	poetry run pre-commit install
+	python -m pip install -r requirements.txt
+	pip install pre-commit
+	pre-commit install
 	
 activate:
 	@echo "Activating virtual environment"
-	poetry shell
+	source env/bin/activate
 
-setup: install activate
+setup: install
 
 precommit:
 	@echo "Running precommit on all files"
@@ -23,8 +23,8 @@ precommit:
 
 export:
 	@echo "Exporting dependencies to requirements file"
-	poetry export --without-hashes -f requirements.txt --output requirements.txt
+	python -m pip freeze > requirements.txt
 
-backup: # To push to Github without running precommit
+force backup: # To push to Github without running precommit
 	git commit --no-verify -m "backup"
 	git push origin main

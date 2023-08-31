@@ -96,4 +96,5 @@ models/*
 !.gitkeep
 
 # Develoment Enviroment
-develoment
+
+.gitpod.yml
