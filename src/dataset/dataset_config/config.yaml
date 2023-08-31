@@ -1,0 +1,7 @@
+path:
+  data_url: "https://www.kaggle.com/competitions/cassava-leaf-disease-classification/data"
+  data_dir: ${hydra:runtime.cwd}/data/raw
+  processed: ${hydra:runtime.cwd}/processed
+
+files:
+  raw_data: ''

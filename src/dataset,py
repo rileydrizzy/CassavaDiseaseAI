@@ -1,4 +1,0 @@
-"""doc
-"""
-import open
-data_url = "https://www.kaggle.com/competitions/cassava-leaf-disease-classification/data"
